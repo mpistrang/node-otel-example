@@ -1,4 +1,4 @@
-# Node.js Otel Example
+# Node.js OpenTelemetry Example
 
 A Kafka consumer and producer writtin in Node.js that can be used as an example for getting OpenTelemetry for Javascript operating correctly.
 
@@ -10,3 +10,9 @@ The app has two entrypoints that can be run from the same docker image.  A consu
 - Build and run Kafka and the Node.js consumer: `docker-compose up -d --build`
 - Wait for the consumer to connect: `docker logs -f consumer`
 - Produce a single message: `docker-compose run --rm consumer_producer node /app/src/produce.js`
+
+# What it does
+
+The producer sends out a flat message with a short message and a timestamp
+
+The consumer parses the message, makes an arbitrary GET request (for auto-instrumentation purposes), and logs the message.
