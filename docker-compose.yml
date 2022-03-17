@@ -21,6 +21,9 @@ services:
       KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
   consumer_producer:
+    depends_on:
+      - kafka
+      - zookeeper
     container_name: consumer
     build:
       context: .
